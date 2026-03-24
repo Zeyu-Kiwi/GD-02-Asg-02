@@ -15,9 +15,11 @@ public class CarController : MonoBehaviour
 	{
 		public GameObject wheelModel;
 		public WheelCollider wheelCollider;
+		public GameObject wheelEffectObj;
 		public Axel axel;
 	}
 
+	public float maxSpeed = 25f; // km/h / 3.6 = m/s (the value you put for maxSpeed)
 	public float maxAcceleration = 30.0f;
 	public float brakeAcceleration = 50.0f;
 
@@ -43,6 +45,7 @@ public class CarController : MonoBehaviour
     {
         GetInputs();
 		AnimateWheels();
+		WheelEffect();
     }
 
     void FixedUpdate() //was LateUpdate
@@ -60,9 +63,12 @@ public class CarController : MonoBehaviour
 
     void Move()
     {
+		float speed = carRb.linearVelocity.magnitude;
+		float speedFactor = Mathf.Clamp01(1 - (speed / maxSpeed));
+
 		foreach (var wheel in wheels)
 		{
-			wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime; // AI suggested to remove Time.deltaTime
+			wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * speedFactor;// * Time.deltaTime; AI suggested to remove Time.deltaTime
 		}	
     }
 
@@ -84,7 +90,7 @@ public class CarController : MonoBehaviour
 		{
 			foreach (var wheel in wheels)
 			{
-				wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
+				wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration;// * Time.deltaTime;
 			}
 		}
 		else
@@ -107,4 +113,31 @@ public class CarController : MonoBehaviour
 			wheel.wheelModel.transform.rotation = rot;
 		}
 	}
+
+    void WheelEffect()
+    {
+        foreach (var wheel in wheels)
+        {
+            var trail = wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>();
+
+            WheelHit hit;
+            if (wheel.wheelCollider.GetGroundHit(out hit))
+            {
+                float slip = Mathf.Abs(hit.sidewaysSlip);
+
+                if (Input.GetKey(KeyCode.Space) && slip > 0.2f) // tweak this value
+                {
+                    trail.emitting = true;
+                }
+                else
+                {
+                    trail.emitting = false;
+                }
+            }
+            else
+            {
+                trail.emitting = false;
+            }
+        }
+    }
 }
