@@ -36,11 +36,14 @@ public class CarController : MonoBehaviour
 	float steerInput;
 
 	private Rigidbody carRb;
+    private CarLight carLights;
 
     void Start()
     {
         carRb = GetComponent<Rigidbody>();
 		carRb.centerOfMass = _centerOfMass;
+
+        carLights = GetComponent<CarLight>();
     }
 
     void Update()
@@ -181,6 +184,10 @@ public class CarController : MonoBehaviour
             //Car four status logic
             if (isBraking == true)
             {
+                //turn on back light
+                carLights.isBackLightOn = true;
+                carLights.OperateBackLight();
+
                 if (isTurning == true)
                 {
                     if (isMoving == true)
@@ -240,6 +247,10 @@ public class CarController : MonoBehaviour
             }
             else if (isBraking == false)
             {
+                //turn off back light
+                carLights.isBackLightOn = false;
+                carLights.OperateBackLight();
+
                 if (isTurning == true)
                 {
                     if (isMoving == true)
