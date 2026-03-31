@@ -36,14 +36,11 @@ public class CarController : MonoBehaviour
 	float steerInput;
 
 	private Rigidbody carRb;
-    private CarLight carLights;
 
     void Start()
     {
         carRb = GetComponent<Rigidbody>();
 		carRb.centerOfMass = _centerOfMass;
-
-        carLights = GetComponent<CarLight>();
     }
 
     void Update()
@@ -184,10 +181,6 @@ public class CarController : MonoBehaviour
             //Car four status logic
             if (isBraking == true)
             {
-                //turn on back light
-                carLights.isBackLightOn = true;
-                carLights.OperateBackLight();
-
                 if (isTurning == true)
                 {
                     if (isMoving == true)
@@ -199,7 +192,7 @@ public class CarController : MonoBehaviour
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
 
-                        //Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                     else if (isMoving == false && wheel.axel == Axel.Rear)
                     {
@@ -217,7 +210,7 @@ public class CarController : MonoBehaviour
                             
                         
 
-                        //Debug.Log("Drift mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Drift mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                 }
                 else if (isTurning == false)
@@ -231,7 +224,7 @@ public class CarController : MonoBehaviour
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
 
-                        //Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                     else if (isMoving == false)
                     {
@@ -241,16 +234,12 @@ public class CarController : MonoBehaviour
                         WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
-                        //Debug.Log("Brake mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Brake mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                 }
             }
             else if (isBraking == false)
             {
-                //turn off back light
-                carLights.isBackLightOn = false;
-                carLights.OperateBackLight();
-
                 if (isTurning == true)
                 {
                     if (isMoving == true)
@@ -261,7 +250,7 @@ public class CarController : MonoBehaviour
                         WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
-                        //Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                     else if (isMoving == false)
                     {
@@ -272,7 +261,7 @@ public class CarController : MonoBehaviour
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
 
-                        //Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                 }
                 else if (isTurning == false)
@@ -285,7 +274,7 @@ public class CarController : MonoBehaviour
                         WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
-                        //Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                     else if (isMoving == false)
                     {
@@ -295,7 +284,7 @@ public class CarController : MonoBehaviour
                         WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
                         friction.stiffness = 1.8f;
                         wheel.wheelCollider.sidewaysFriction = friction;
-                        //Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                 }
             }
