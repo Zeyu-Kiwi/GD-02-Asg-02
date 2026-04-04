@@ -2686,10 +2686,10 @@ MonoBehaviour:
     brushes:
     - name: rpgpp_lt_tree_pine_01
       settings:
-        brushRadius: 16.4
+        brushRadius: 7.5
         brushSpacing: 5
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 0.5
+        brushOverlapDistance: 1
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -3316,7 +3316,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: rpgpp_lt_tree_01
       settings:
-        brushRadius: 18.6
+        brushRadius: 20
         brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
@@ -4576,8 +4576,8 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: rpgpp_lt_grass_small_01a
       settings:
-        brushRadius: 1
-        brushSpacing: 0.5
+        brushRadius: 20
+        brushSpacing: 5
         brushOverlapCheckMode: 0
         brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
@@ -4886,7 +4886,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: rpgpp_lt_flower_01
@@ -5201,7 +5201,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: rpgpp_lt_flower_02
