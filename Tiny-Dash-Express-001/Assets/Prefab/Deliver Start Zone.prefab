@@ -63,6 +63,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,9 +86,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &880446647488760688
 BoxCollider:
@@ -121,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a59d204017159d478afb6125c44119d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parcelToDeliver: {fileID: 0}
+  parcelToDeliver: {fileID: 440111740134636725, guid: b41c50d7fcf418e4ca6a15de9caeb526, type: 3}
   spawnParcel: {fileID: 0}
-  tempCollider: {fileID: 0}
   isLoaded: 0

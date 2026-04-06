@@ -19,6 +19,7 @@ public class UnloadZone : MonoBehaviour
         if (isTruck && isRightParcel)
         {
             Unload();
+
         }
     }
 
@@ -65,6 +66,8 @@ public class UnloadZone : MonoBehaviour
         {
             isRightParcel = true;
         }
+
+        
     }
 
     //private void OnTriggerStay(Collider other)
@@ -75,13 +78,15 @@ public class UnloadZone : MonoBehaviour
     //    }
     //}
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Truck"))
-    //    {
-    //        timeLeft = maxTime; // reset for next delivery
-    //    }
-    //}
+    private void OnTriggerExit(Collider other)
+    {
+        //if (other.CompareTag("Truck"))
+        //{
+        //    timeLeft = maxTime; // reset for next delivery
+        //}
+
+        SaveSystem.Instance.Save(other.gameObject, false);
+    }
 
     private void Unload()
     {

@@ -24,11 +24,16 @@ public class StartZone : MonoBehaviour
             //tempCollider.SetActive(true); // active the cage before loading parcel so parcel won't fall off
             GameObject parcel = Instantiate(parcelToDeliver, spawnParcel.transform);
 
+            
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
         //tempCollider.SetActive(false); // disable the cage when left the zone so parcel will fall off due to physics
+
+        SaveSystem.Instance.GetData(parcelToDeliver, spawnParcel);
+        SaveSystem.Instance.Save(other.gameObject, true);
     }
 }

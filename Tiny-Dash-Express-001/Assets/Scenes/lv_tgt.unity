@@ -158348,6 +158348,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7750879931012074049, guid: e83b8f84be7ec9047831a6bdc7ed52df, type: 3}
+      propertyPath: truck
+      value: 
+      objectReference: {fileID: 580508656}
     - target: {fileID: 8946075099363360805, guid: e83b8f84be7ec9047831a6bdc7ed52df, type: 3}
       propertyPath: timerText
       value: 

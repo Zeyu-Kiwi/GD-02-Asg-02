@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public int totalMoney = 0;
 
     public TextMeshProUGUI timerText;
-    private float elapsedTime;
+    public float elapsedTime;
 
     private void Awake()
     {
