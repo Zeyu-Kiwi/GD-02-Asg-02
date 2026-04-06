@@ -104,6 +104,7 @@ public class UnloadZone : MonoBehaviour
         //int finalMoney = Mathf.RoundToInt(totalValue * timeMultiplier);
 
         //Debug.Log($"Delivered {parcelCount} parcels. Earned: {finalMoney}");
+        GameManager.Instance.AddMoney(totalValue);
 
         // Destroy delivered parcels
         foreach (Parcel p in cargo.parcels)
