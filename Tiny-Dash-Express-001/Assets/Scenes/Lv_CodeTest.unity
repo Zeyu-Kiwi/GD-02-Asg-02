@@ -3550,7 +3550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270116218}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caedb09a54dfd1e4ca3474dc1d58aa85, type: 3}
   m_Name: 
@@ -9561,7 +9561,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 70
+  orthographic size: 100
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -9599,7 +9599,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595324380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caedb09a54dfd1e4ca3474dc1d58aa85, type: 3}
   m_Name: 
@@ -14315,7 +14315,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 145, y: 145}
+  m_SizeDelta: {x: 745, y: 395}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &846841998
 MonoBehaviour:
@@ -27517,7 +27517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1567100176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27932,10 +27932,10 @@ RectTransform:
   - {fileID: 846841997}
   m_Father: {fileID: 1567100179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: -80}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 750, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577308764
 MonoBehaviour:
@@ -53961,6 +53961,7 @@ MonoBehaviour:
     wheelEffectObj: {fileID: 905046464857464723}
     driftSmokeVFX: {fileID: 431163208144276591}
     axel: 0
+  map: {fileID: 1567100175}
 --- !u!1 &3766677898510318805
 GameObject:
   m_ObjectHideFlags: 0
@@ -68919,7 +68920,7 @@ PrefabInstance:
     - target: {fileID: 2557843687141531437, guid: 056c33e0dd104a94cb3fa6a63bc51559, type: 3}
       propertyPath: tempCollider
       value: 
-      objectReference: {fileID: 7406295960506212414}
+      objectReference: {fileID: 0}
     - target: {fileID: 2557843687141531437, guid: 056c33e0dd104a94cb3fa6a63bc51559, type: 3}
       propertyPath: parcelToDeliver
       value: 
@@ -80195,7 +80196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &7407117670673214226
 Light:
   m_ObjectHideFlags: 0

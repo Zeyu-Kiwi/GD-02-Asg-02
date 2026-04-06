@@ -38,6 +38,8 @@ public class CarController : MonoBehaviour
 	private Rigidbody carRb;
     private CarLight carLights;
 
+    public GameObject map;
+
     void Start()
     {
         carRb = GetComponent<Rigidbody>();
@@ -51,7 +53,10 @@ public class CarController : MonoBehaviour
         GetInputs();
 		AnimateWheels();
 		WheelEffect();
+        MyMiniMap();
     }
+
+   
 
     void FixedUpdate() //was LateUpdate
     {
@@ -339,6 +344,18 @@ public class CarController : MonoBehaviour
             {
                 trail.emitting = false;
             }
+        }
+    }
+
+    private void MyMiniMap()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && !map.activeInHierarchy)
+        {
+            map.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Q) && map.activeInHierarchy)
+        {
+            map.SetActive(false);
         }
     }
 }
