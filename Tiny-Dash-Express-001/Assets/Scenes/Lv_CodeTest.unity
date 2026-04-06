@@ -3550,7 +3550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270116218}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caedb09a54dfd1e4ca3474dc1d58aa85, type: 3}
   m_Name: 
@@ -9605,7 +9605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 8904446693164474800}
-  mark: {fileID: 0}
+  mark: {fileID: 270116219}
 --- !u!1 &598258416
 GameObject:
   m_ObjectHideFlags: 0
