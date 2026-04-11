@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4674113645566173457}
   - component: {fileID: 8946075099363360805}
   - component: {fileID: 7750879931012074049}
+  - component: {fileID: 8599473475792662116}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,6 +49,9 @@ MonoBehaviour:
   totalMoney: 0
   timerText: {fileID: 0}
   elapsedTime: 0
+  timeTaken: 0
+  timeTakenTxt: {fileID: 0}
+  bestTimeTxt: {fileID: 0}
 --- !u!114 &7750879931012074049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,3 +68,27 @@ MonoBehaviour:
   parcels: {fileID: 0}
   spawnParcelPos: {fileID: 0}
   isLoaded: 0
+--- !u!114 &8599473475792662116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818964008971581582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6ca3b584aee30489f5d7ecf49672ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MissionManager
+  startZones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  endZones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  endScreen: {fileID: 0}
+  missionIndex: 0

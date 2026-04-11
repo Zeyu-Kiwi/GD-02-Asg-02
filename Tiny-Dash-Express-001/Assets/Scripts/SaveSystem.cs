@@ -14,7 +14,13 @@ public class SaveSystem : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        float savedScore = PlayerPrefs.GetFloat("BestTime");
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat("BestTime", savedScore);
     }
 
     private void Update()

@@ -7,11 +7,15 @@ public class MissionManager : MonoBehaviour
     public GameObject[] startZones;
     public GameObject[] endZones;
 
+    public GameObject endScreen;
+    [SerializeField] private bool isGameEnd = false;
+
     public int missionIndex;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         instance = this;
+        isGameEnd = false;
     }
 
     // Update is called once per frame
@@ -39,6 +43,16 @@ public class MissionManager : MonoBehaviour
             {
                 endZones[e].SetActive(false);
             }
+        }
+
+        if (missionIndex == 4 && !isGameEnd)
+        {
+            isGameEnd = true;
+            GameManager.Instance.timeTaken = GameManager.Instance.elapsedTime;
+            GameManager.Instance.BestTimeUpdate();
+
+            Debug.Log("all deliveryed!");
+            endScreen.SetActive(true);
         }
     }
 }
