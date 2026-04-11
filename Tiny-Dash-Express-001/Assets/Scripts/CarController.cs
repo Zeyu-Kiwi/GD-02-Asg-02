@@ -352,10 +352,12 @@ public class CarController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && !map.activeInHierarchy)
         {
             map.SetActive(true);
+            Time.timeScale = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.Q) && map.activeInHierarchy)
         {
             map.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 }

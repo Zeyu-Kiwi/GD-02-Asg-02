@@ -14,6 +14,7 @@ public class SaveSystem : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        PlayerPrefs.DeleteAll();
     }
 
     private void Update()
