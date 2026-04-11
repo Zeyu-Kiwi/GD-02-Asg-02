@@ -7,9 +7,9 @@ public class SaveSystem : MonoBehaviour
 
     public GameObject truck;
 
-    public GameObject parcels;
-    public GameObject spawnParcelPos;
-    public bool isLoaded;
+    [HideInInspector] public GameObject parcels;
+    [HideInInspector] public GameObject spawnParcelPos;
+    [HideInInspector] public bool isLoaded;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class SaveSystem : MonoBehaviour
         {
             if (truck != null)
             {
-                Debug.Log("Reload btn pressed!");
+                //Debug.Log("Reload btn pressed!");
                 Load(truck);
             }
         }

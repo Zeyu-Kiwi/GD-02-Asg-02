@@ -80,12 +80,13 @@ public class UnloadZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if (other.CompareTag("Truck"))
-        //{
-        //    timeLeft = maxTime; // reset for next delivery
-        //}
+        if (other.CompareTag("truck"))
+        {
+            //timeleft = maxtime; // reset for next delivery
+            SaveSystem.Instance.Save(other.gameObject, false);
+        }
 
-        SaveSystem.Instance.Save(other.gameObject, false);
+        
     }
 
     private void Unload()

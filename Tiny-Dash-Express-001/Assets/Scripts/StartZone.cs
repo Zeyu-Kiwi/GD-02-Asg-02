@@ -31,9 +31,12 @@ public class StartZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //tempCollider.SetActive(false); // disable the cage when left the zone so parcel will fall off due to physics
+        if (other.CompareTag("Truck"))
+        {
+            //tempCollider.SetActive(false); // disable the cage when left the zone so parcel will fall off due to physics
 
-        SaveSystem.Instance.GetData(parcelToDeliver, spawnParcel);
-        SaveSystem.Instance.Save(other.gameObject, true);
+            SaveSystem.Instance.GetData(parcelToDeliver, spawnParcel);
+            SaveSystem.Instance.Save(other.gameObject, true);
+        } 
     }
 }
