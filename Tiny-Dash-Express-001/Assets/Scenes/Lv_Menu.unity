@@ -9154,8 +9154,8 @@ MonoBehaviour:
   endPosition: {x: -136.326, y: 32.3268, z: 1290.078}
   panDuration: 15
   fixedRotation: {x: 15, y: 0, z: 0}
-  loopPan: 0
-  loopDelay: 2
+  loopPan: 1
+  loopDelay: 0.5
   movementCurve:
     serializedVersion: 2
     m_Curve:

@@ -19,6 +19,8 @@ public class MenuCameraPan : MonoBehaviour
     private bool isPanning = true;
     private float waitTimer = 0f;
 
+    private bool goingForward = true;
+
     void Start()
     {
         // Set camera to start position
@@ -42,17 +44,31 @@ public class MenuCameraPan : MonoBehaviour
         transform.position = Vector3.Lerp(startPosition, endPosition, curvedT);
 
         // When pan completes
+        //if (t >= 1f)
+        //{
+        //    if (loopPan)
+        //    {
+        //        // Reset with delay
+        //        isPanning = false;
+        //        waitTimer = loopDelay;
+        //    }
+        //    else
+        //    {
+        //        enabled = false; // Stop script
+        //        Debug.Log("Camera pan complete!");
+        //    }
+        //}
+
         if (t >= 1f)
         {
             if (loopPan)
             {
-                // Reset with delay
                 isPanning = false;
                 waitTimer = loopDelay;
             }
             else
             {
-                enabled = false; // Stop script
+                enabled = false;
                 Debug.Log("Camera pan complete!");
             }
         }
@@ -66,9 +82,21 @@ public class MenuCameraPan : MonoBehaviour
             if (waitTimer <= 0f)
             {
                 // Reset and start again
+                //timer = 0f;
+                //transform.position = startPosition;
+                //transform.eulerAngles = fixedRotation;  // Reset rotation too
+                //isPanning = true;
+
+                //=============================================================================
+
+                // Reverse direction
                 timer = 0f;
-                transform.position = startPosition;
-                transform.eulerAngles = fixedRotation;  // Reset rotation too
+
+                // Swap start and end
+                Vector3 temp = startPosition;
+                startPosition = endPosition;
+                endPosition = temp;
+
                 isPanning = true;
             }
         }
