@@ -49,7 +49,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Mathf.Abs(moveInput) > 0.1f || Mathf.Abs(steerInput) > 0.1f)
             {
-                Debug.Log("learnt to move");
+                //Debug.Log("learnt to move");
                 popUpIndex++;
                 ShowPopup(popUpIndex);
             }
@@ -58,7 +58,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("learnt to brake");
+                //Debug.Log("learnt to brake");
                 popUpIndex++;
                 ShowPopup(popUpIndex);
             }
@@ -67,7 +67,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (Mathf.Abs(steerInput) > 0.1f && Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("learnt to drift");
+                //Debug.Log("learnt to drift");
                 popUpIndex++;
                 ShowPopup(popUpIndex);
             }
@@ -76,7 +76,7 @@ public class TutorialManager : MonoBehaviour
         {
             if (SaveSystem.Instance.isLoaded && Input.GetKeyDown(KeyCode.R)) // move to next tutorial if player perform a reload
             {
-                Debug.Log("learnt to reload");
+                //Debug.Log("learnt to reload");
                 roadBlocks.SetActive(false);
                 popUpIndex++;
                 ShowPopup(popUpIndex);
@@ -100,7 +100,7 @@ public class TutorialManager : MonoBehaviour
             
             if (waitTime <= 0)
             {
-                Debug.Log("end txt");
+                //Debug.Log("end txt");
                 popUpIndex++;
                 ShowPopup(popUpIndex);
             }

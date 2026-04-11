@@ -58,7 +58,7 @@ public class SimpleWalker : MonoBehaviour
             if (stuckTimer > 2f)
             {
                 // Stuck! Turn to a completely new direction
-                Debug.Log("Cow got stuck - turning around");
+                //Debug.Log("Cow got stuck - turning around");
                 PickNewDirection();
                 stuckTimer = 0f;
             }
@@ -108,7 +108,7 @@ public class SimpleWalker : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
         }
 
-        Debug.Log($"Cow changed direction to angle: {randomAngle}");
+        //Debug.Log($"Cow changed direction to angle: {randomAngle}");
     }
 
     void TurnAround()
@@ -120,7 +120,7 @@ public class SimpleWalker : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, newY, 0);
         timer = changeDirectionTime;
 
-        Debug.Log("Cow hit boundary - turned around");
+        //Debug.Log("Cow hit boundary - turned around");
     }
 
     void OnCollisionEnter(Collision collision)

@@ -18,7 +18,7 @@ public class StartZone : MonoBehaviour
     {
         if (other.CompareTag("Truck") && !isLoaded)
         {
-            Debug.Log("Truck in. Load Parcel.");
+            //Debug.Log("Truck in. Load Parcel.");
 
             isLoaded = true;
             //tempCollider.SetActive(true); // active the cage before loading parcel so parcel won't fall off

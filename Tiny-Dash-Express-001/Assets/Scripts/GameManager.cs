@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int amount)
     {
         totalMoney += amount;
-        Debug.Log("Total money: " + totalMoney);
+        //Debug.Log("Total money: " + totalMoney);
     }
 
     private void MyTimer()

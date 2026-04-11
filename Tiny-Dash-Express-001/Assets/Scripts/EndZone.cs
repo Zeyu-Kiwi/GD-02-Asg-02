@@ -80,10 +80,10 @@ public class UnloadZone : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("truck"))
+        if (other.CompareTag("Truck"))
         {
             //timeleft = maxtime; // reset for next delivery
-            SaveSystem.Instance.Save(other.gameObject, false);
+            SaveSystem.Instance.Save(other.gameObject, false);   
         }
 
         
@@ -91,7 +91,7 @@ public class UnloadZone : MonoBehaviour
 
     private void Unload()
     {
-        Debug.Log(parcelTag + " is delivered!");
+        //Debug.Log(parcelTag + " is delivered!");
         isTruck = false;
         isRightParcel = false;
 
@@ -111,6 +111,7 @@ public class UnloadZone : MonoBehaviour
 
         //Debug.Log($"Delivered {parcelCount} parcels. Earned: {finalMoney}");
         GameManager.Instance.AddMoney(totalValue);
+        MissionManager.instance.missionIndex += 1;
 
         // Destroy delivered parcels
         foreach (Parcel p in cargo.parcels)
