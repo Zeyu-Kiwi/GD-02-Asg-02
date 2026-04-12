@@ -6,7 +6,21 @@ public class StartZone : MonoBehaviour
     public GameObject spawnParcel;
     //public GameObject tempCollider;
 
+    public GameObject qnsMark;
+
     [SerializeField] private bool isLoaded = false;
+
+    private void Update()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            qnsMark.SetActive(true);
+        }
+        else
+        {
+            qnsMark.SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

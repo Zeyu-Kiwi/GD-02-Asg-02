@@ -14,6 +14,19 @@ public class UnloadZone : MonoBehaviour
     private bool isTruck;
     private bool isRightParcel;
 
+    public GameObject qnsMarks;
+
+    private void Update()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            qnsMarks.SetActive(true);
+        }
+        else
+        {
+            qnsMarks.SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,8 +47,6 @@ public class UnloadZone : MonoBehaviour
             Unload(other);
             AudioManager.instance.Play("Unloading");
         }
-
-
     }
 
     private void OnTriggerExit(Collider other)

@@ -5,6 +5,8 @@ public class QuestMarker : MonoBehaviour
     public float floatSpeed = 1f;      // How fast it bobs
     public float floatHeight = 0.3f;   // How high it moves up/down
 
+    public GameObject zone;
+
     private Vector3 startPos;
 
     void Start()
@@ -23,5 +25,14 @@ public class QuestMarker : MonoBehaviour
         // 2. Gentle floating up and down
         float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
         transform.position = new Vector3(startPos.x, newY, startPos.z);
+
+        if (zone.activeSelf)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject[] popUps;
-    private int popUpIndex;
+    [SerializeField]private int popUpIndex;
     public float waitTime = 10f;
 
     public GameObject roadBlocks;
@@ -96,19 +96,26 @@ public class TutorialManager : MonoBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
-        else if (popUpIndex == 4) // tutorial end txt
+        else if (popUpIndex == 4) // tutorial learn to open map
         {
-            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                popUpIndex++;
+                ShowPopup(popUpIndex);
+            }
+        }
+        else if (popUpIndex == 5) // tutorial end txt
+        {
             if (waitTime <= 0)
             {
                 //Debug.Log("end txt");
                 popUpIndex++;
                 ShowPopup(popUpIndex);
             }
-            else{
+            else
+            {
                 waitTime -= Time.deltaTime;
             }
-            
         }
     }
 }
