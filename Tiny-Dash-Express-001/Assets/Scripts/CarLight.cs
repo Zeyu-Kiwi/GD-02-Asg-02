@@ -36,10 +36,10 @@ public class CarLight : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            OperateFrontLights();
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    OperateFrontLights();
+        //}
     }
 
     public void OperateFrontLights()

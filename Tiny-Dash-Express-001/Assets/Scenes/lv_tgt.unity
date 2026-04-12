@@ -54090,6 +54090,9 @@ PrefabInstance:
       addedObject: {fileID: 793181152}
     - targetCorrespondingSourceObject: {fileID: 6992788893827702590, guid: 1630243371765cd4caac158561120ceb, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1500886340}
+    - targetCorrespondingSourceObject: {fileID: 6992788893827702590, guid: 1630243371765cd4caac158561120ceb, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 439622344}
     - targetCorrespondingSourceObject: {fileID: 6992788893827702590, guid: 1630243371765cd4caac158561120ceb, type: 3}
       insertIndex: -1
@@ -56155,8 +56158,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1500886340}
+  m_Children: []
   m_Father: {fileID: 1268919605}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -110787,16 +110789,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500886339}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 793181152}
+  m_Father: {fileID: 1268919605}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 240}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500886341
@@ -168623,7 +168625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1960154404179834983, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1991344188508427569, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_Pivot.x
@@ -168735,7 +168737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5337818064047398833, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5722566865359699677, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_CullTransparentMesh
@@ -168767,7 +168769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6308697069488066081, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_text
-      value: "Game auto saves after exiting \n/\nPress R to load last save"
+      value: "Game auto saves after exiting \n/\nPress E to load last save"
       objectReference: {fileID: 0}
     - target: {fileID: 6626261111170804819, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_AnchoredPosition.x
