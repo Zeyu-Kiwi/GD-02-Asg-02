@@ -17,8 +17,8 @@ public class StartZone : MonoBehaviour
             isLoaded = true;
             //tempCollider.SetActive(true); // active the cage before loading parcel so parcel won't fall off
             GameObject parcel = Instantiate(parcelToDeliver, spawnParcel.transform);
+            AudioManager.instance.Play("Loading");
 
-            
 
         }
     }

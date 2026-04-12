@@ -61,6 +61,9 @@ public class MissionManager : MonoBehaviour
             GameManager.Instance.BestTimeUpdate();
 
             //Debug.Log("all deliveryed!");
+            AudioManager.instance.Stop("Theme");
+            AudioManager.instance.Play("GameComplete");
+
             endScreen.SetActive(true);
 
             Cursor.visible = true;

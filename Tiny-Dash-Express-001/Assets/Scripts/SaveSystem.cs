@@ -38,6 +38,7 @@ public class SaveSystem : MonoBehaviour
             if (truck != null)
             {
                 //Debug.Log("Reload btn pressed!");
+                
                 Load(truck);
             }
         }
@@ -83,9 +84,11 @@ public class SaveSystem : MonoBehaviour
         if (!PlayerPrefs.HasKey("Money"))
         {
             //Debug.Log("No save found!");
+            AudioManager.instance.Play("ReloadFail");
             return;
         }
 
+        AudioManager.instance.Play("Reload");
         // Restore money
         GameManager.Instance.totalMoney = PlayerPrefs.GetInt("Money");
 

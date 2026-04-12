@@ -32,6 +32,7 @@ public class UnloadZone : MonoBehaviour
         if (isTruck && isRightParcel)
         {
             Unload(other);
+            AudioManager.instance.Play("Unloading");
         }
 
 

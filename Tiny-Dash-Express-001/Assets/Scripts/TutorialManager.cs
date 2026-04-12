@@ -34,6 +34,7 @@ public class TutorialManager : MonoBehaviour
 
     void ShowPopup(int index)
     {
+        AudioManager.instance.Play("Tutorial");
         for (int i = 0; i < popUps.Length; i++)
         {
             popUps[i].SetActive(i == index);
