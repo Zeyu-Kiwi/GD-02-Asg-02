@@ -18,9 +18,17 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        float savedScore = PlayerPrefs.GetFloat("BestTime");
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat("BestTime", savedScore);
+        if (PlayerPrefs.HasKey("BestTime"))
+        {
+            float savedScore = PlayerPrefs.GetFloat("BestTime");
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetFloat("BestTime", savedScore);
+        }
+        else
+        {
+            PlayerPrefs.DeleteAll();
+        }
+        
     }
 
     private void Update()
@@ -74,7 +82,7 @@ public class SaveSystem : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("Money"))
         {
-            Debug.Log("No save found!");
+            //Debug.Log("No save found!");
             return;
         }
 
@@ -121,9 +129,9 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            Debug.Log("No parcels in delivery.");
+            //Debug.Log("No parcels in delivery.");
         }
 
-        Debug.Log("Game Loaded!");
+        //Debug.Log("Game Loaded!");
     }
 }

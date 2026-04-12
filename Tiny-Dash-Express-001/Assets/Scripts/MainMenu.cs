@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    private void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -10,19 +16,29 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        float savedScore = PlayerPrefs.GetFloat("BestTime");
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat("BestTime", savedScore);
-
+        ResetSavedData();
         Application.Quit();
     }
 
     public void RestartGame()
     {
-        float savedScore = PlayerPrefs.GetFloat("BestTime");
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetFloat("BestTime", savedScore);
-
+        ResetSavedData();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void ResetSavedData()
+    {
+        if (PlayerPrefs.HasKey("BestTime"))
+        {
+            //Debug.Log("Found BestTime save");
+            float savedScore = PlayerPrefs.GetFloat("BestTime");
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetFloat("BestTime", savedScore);
+        }
+        else
+        {
+            //Debug.Log("No BestTime save");
+            PlayerPrefs.DeleteAll();
+        }
     }
 }

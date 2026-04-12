@@ -14,47 +14,9 @@ public class UnloadZone : MonoBehaviour
     private bool isTruck;
     private bool isRightParcel;
 
-    private void Update()
-    {
-        if (isTruck && isRightParcel)
-        {
-            Unload();
-
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.CompareTag("Truck"))
-        {
-            cargo = other.GetComponentInChildren<TruckCargo>();
-
-            if (cargo == null) return;
-
-            parcelCount = cargo.parcels.Count;
-
-            totalValue = 0;
-
-            foreach (Parcel p in cargo.parcels)
-            {
-                totalValue += p.value;
-            }
-
-            // Time bonus (simple version)
-            //float timeMultiplier = Mathf.Clamp01(timeLeft / maxTime) + 1f;
-
-            //int finalMoney = Mathf.RoundToInt(totalValue * timeMultiplier);
-
-            //Debug.Log($"Delivered {parcelCount} parcels. Earned: {finalMoney}");
-
-            // Destroy delivered parcels
-            foreach (Parcel p in cargo.parcels)
-            {
-                Destroy(p.gameObject);
-            }
-
-            cargo.parcels.Clear();
-        }*/
 
         if (other.CompareTag("Truck"))
         {
@@ -67,29 +29,24 @@ public class UnloadZone : MonoBehaviour
             isRightParcel = true;
         }
 
-        
-    }
+        if (isTruck && isRightParcel)
+        {
+            Unload(other);
+        }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.CompareTag("Truck"))
-    //    {
-    //        timeLeft -= Time.deltaTime;
-    //    }
-    //}
+
+    }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Truck"))
         {
             //timeleft = maxtime; // reset for next delivery
-            SaveSystem.Instance.Save(other.gameObject, false);   
-        }
-
-        
+            //SaveSystem.Instance.Save(other.gameObject, false);   
+        }  
     }
 
-    private void Unload()
+    private void Unload(Collider other)
     {
         //Debug.Log(parcelTag + " is delivered!");
         isTruck = false;
@@ -111,6 +68,7 @@ public class UnloadZone : MonoBehaviour
 
         //Debug.Log($"Delivered {parcelCount} parcels. Earned: {finalMoney}");
         GameManager.Instance.AddMoney(totalValue);
+        SaveSystem.Instance.Save(other.gameObject, false);
         MissionManager.instance.missionIndex += 1;
 
         // Destroy delivered parcels

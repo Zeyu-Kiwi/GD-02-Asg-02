@@ -1,3 +1,4 @@
+using System.Dynamic;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +18,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        FixErrorSave();
+        SetMouseState();
     }
 
     // Update is called once per frame
@@ -50,7 +57,7 @@ public class GameManager : MonoBehaviour
         //is there already a besttime?
         if (PlayerPrefs.HasKey("BestTime"))
         {
-            Debug.Log("Save found, comparing time");
+            //Debug.Log("Save found, comparing time");
             //if the new time is shorter than the saved one?
             if (timeTaken < PlayerPrefs.GetFloat("BestTime"))
             {
@@ -60,7 +67,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No save, saving current time");
+            //Debug.Log("No save, saving current time");
             PlayerPrefs.SetFloat("BestTime", timeTaken);
         }
         float tempBT = PlayerPrefs.GetFloat("BestTime");
@@ -70,11 +77,31 @@ public class GameManager : MonoBehaviour
         int secondsTT = Mathf.FloorToInt(timeTaken % 60);
         timeTakenTxt.text = string.Format("{0:00}:{1:00}", minutesTT, secondsTT);
 
-        Debug.Log(PlayerPrefs.GetFloat("BestTime"));
+        //Debug.Log(PlayerPrefs.GetFloat("BestTime"));
         int minutesBT = Mathf.FloorToInt(tempBT / 60);
         int secondsBT = Mathf.FloorToInt(tempBT % 60);
         bestTimeTxt.text = string.Format("{0:00}:{1:00}", minutesBT, secondsBT);
 
 
+    }
+
+    void FixErrorSave()
+    {
+        if (PlayerPrefs.HasKey("BestTime"))
+        {
+            //Debug.Log("Found Save");
+            float checkSave = PlayerPrefs.GetFloat("BestTime");
+            if (checkSave <= 5f)
+            {
+                //Debug.Log("Error data. Removing save");
+                ResetSavedTime();
+            }
+        }
+    }
+
+    void SetMouseState()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

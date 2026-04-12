@@ -21,6 +21,12 @@ public class MissionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetMissionStates();
+        GameCompleted();
+    }
+
+    void SetMissionStates()
+    {
         for (int s = 0; s < startZones.Length; s++) //loop through all start zones and only active the right one
         {
             if (s == missionIndex)
@@ -37,22 +43,28 @@ public class MissionManager : MonoBehaviour
         {
             if (e == missionIndex)
             {
-               endZones[e].SetActive(true);
+                endZones[e].SetActive(true);
             }
             else
             {
                 endZones[e].SetActive(false);
             }
         }
+    }
 
+    void GameCompleted()
+    {
         if (missionIndex == 4 && !isGameEnd)
         {
             isGameEnd = true;
             GameManager.Instance.timeTaken = GameManager.Instance.elapsedTime;
             GameManager.Instance.BestTimeUpdate();
 
-            Debug.Log("all deliveryed!");
+            //Debug.Log("all deliveryed!");
             endScreen.SetActive(true);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

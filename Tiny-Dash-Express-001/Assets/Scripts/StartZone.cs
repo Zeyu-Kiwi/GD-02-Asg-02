@@ -8,12 +8,6 @@ public class StartZone : MonoBehaviour
 
     [SerializeField] private bool isLoaded = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //tempCollider.SetActive(false);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Truck") && !isLoaded)

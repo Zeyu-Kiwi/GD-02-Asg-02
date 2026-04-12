@@ -97,45 +97,6 @@ public class CarController : MonoBehaviour
 		}
 	}
 
-    //void Brake()
-    //{
-    //    if (Input.GetKey(KeyCode.Space))
-    //    {
-    //        foreach (var wheel in wheels)
-    //        {
-    //            if (wheel.axel == Axel.Rear)
-    //            {
-    //                wheel.wheelCollider.brakeTorque = 300 * normalBrake;// * Time.deltaTime;
-
-    //                WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-    //                friction.stiffness = .5f;
-    //                wheel.wheelCollider.sidewaysFriction = friction;
-    //            }
-    //        }
-    //    }
-    //    else
-    //    {
-    //        foreach (var wheel in wheels)
-    //        {
-
-    //            if (wheel.axel == Axel.Rear)
-    //            {
-    //                wheel.wheelCollider.brakeTorque = 0;
-
-    //                WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-    //                friction.stiffness = 1.8f;
-    //                wheel.wheelCollider.sidewaysFriction = friction;
-    //            }
-    //        }
-    //    }
-    //}
-
-    //four status
-    // 1. brake. when no other input AND press space
-    // 2. drift. when pressed S / D key AND space
-    // 3. driving. when only WASD is pressed
-    // 4. netural. when nothing is press and car slowly comes to a stop
-
     void Brake()
     {
         bool isTurning = Mathf.Abs(steerInput) > 0.1f;
@@ -144,48 +105,6 @@ public class CarController : MonoBehaviour
 
         foreach (var wheel in wheels)
         {
-            /*if (isTurning && isBraking && wheel.axel == Axel.Rear)
-            {
-                // DRIFT: rear wheels lose grip + slight brake
-                wheel.wheelCollider.brakeTorque = 5000f;
-
-                WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-                friction.stiffness = 0.5f;
-                wheel.wheelCollider.sidewaysFriction = friction;
-                Debug.Log("Drift mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
-            }
-            else if (isMoving && !isTurning && !isBraking)
-            {
-                // IDLE: slow down gradually when no input
-                wheel.wheelCollider.brakeTorque = 500f;
-
-                WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-                friction.stiffness = 1.8f;
-                wheel.wheelCollider.sidewaysFriction = friction;
-
-                Debug.Log("Idle mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
-            }
-            else if (isBraking && !isTurning)
-            {
-                // BRAKE: quickly comes to a stop
-                wheel.wheelCollider.brakeTorque = 300 * normalBrake;
-
-                WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-                friction.stiffness = 1.8f;
-                wheel.wheelCollider.sidewaysFriction = friction;
-                Debug.Log("Brake mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
-            }
-            else
-            {
-                // DRIVING: no braking, full grip
-                wheel.wheelCollider.brakeTorque = 0f;
-
-                WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-                friction.stiffness = 1.8f;
-                wheel.wheelCollider.sidewaysFriction = friction;
-                Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
-            }*/
-
             //Car four status logic
             if (isBraking == true)
             {
