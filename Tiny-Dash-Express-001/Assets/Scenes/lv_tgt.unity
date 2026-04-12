@@ -3458,6 +3458,32 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 497938366}
   m_SourcePrefab: {fileID: 100100000, guid: 7d47ffc86846dc3439c1adf621df1f0e, type: 3}
+--- !u!1 &64557901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4647652393365723549, guid: 10580b175c7b72a4ca46dc6db7cf841e, type: 3}
+  m_PrefabInstance: {fileID: 1592681208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &64557902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64557901}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1619007, y: 0.17969733, z: 0.37632558}
+  m_Center: {x: -0.006950309, y: 0.08978584, z: -0.04168457}
 --- !u!1001 &66228717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99215,6 +99241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rain Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 1624732227010082, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4896653716000216, guid: 18d653ec6ac008e43a69363f42d8c371, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -120875,6 +120905,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3604037076241039048, guid: 10580b175c7b72a4ca46dc6db7cf841e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1592681217}
+    - targetCorrespondingSourceObject: {fileID: -4647652393365723549, guid: 10580b175c7b72a4ca46dc6db7cf841e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 64557902}
     - targetCorrespondingSourceObject: {fileID: -6030155450923854921, guid: 10580b175c7b72a4ca46dc6db7cf841e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1592681216}
