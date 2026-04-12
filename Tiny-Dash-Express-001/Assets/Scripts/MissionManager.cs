@@ -6,6 +6,8 @@ public class MissionManager : MonoBehaviour
 
     public GameObject[] startZones;
     public GameObject[] endZones;
+    public GameObject[] startMarkers;
+    public GameObject[] endMarkers;
 
     public GameObject endScreen;
     [SerializeField] private bool isGameEnd = false;
@@ -32,10 +34,12 @@ public class MissionManager : MonoBehaviour
             if (s == missionIndex)
             {
                 startZones[s].SetActive(true);
+                startMarkers[s].SetActive(true);
             }
             else
             {
                 startZones[s].SetActive(false);
+                startMarkers[s].SetActive(false);
             }
         }
 
@@ -44,10 +48,12 @@ public class MissionManager : MonoBehaviour
             if (e == missionIndex)
             {
                 endZones[e].SetActive(true);
+                endMarkers[e].SetActive(true);
             }
             else
             {
                 endZones[e].SetActive(false);
+                endMarkers[e].SetActive(false);
             }
         }
     }

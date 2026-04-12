@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MiniMap
   player: {fileID: 0}
   mark: {fileID: 6142913091827987117}
+  zoneMark: {fileID: 0}
 --- !u!1 &6976223655272079422
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2697011841767953159
 MonoBehaviour:
   m_ObjectHideFlags: 0
