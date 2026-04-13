@@ -28,7 +28,9 @@ public class CarController : MonoBehaviour
 	public float turnSansitivity = 1.0f;
 	public float maxSteerAngle = 30.0f;
 
-	public Vector3 _centerOfMass;
+    private float forwardVelocity;
+
+    public Vector3 _centerOfMass;
 
 	public List<Wheel> wheels;
 
@@ -54,6 +56,8 @@ public class CarController : MonoBehaviour
 		AnimateWheels();
 		WheelEffect();
         MyMiniMap();
+
+        forwardVelocity = Vector3.Dot(carRb.linearVelocity, transform.forward);
     }
 
    
@@ -73,19 +77,27 @@ public class CarController : MonoBehaviour
 
     void Move()
     {
+
 		float speed = carRb.linearVelocity.magnitude;
 		float speedFactor = Mathf.Clamp01(1 - (speed / maxSpeed));
 
-		foreach (var wheel in wheels)
+        
+
+        foreach (var wheel in wheels)
 		{
+            
             if (wheel.axel == Axel.Rear)
-            { 
+            {
+
                 wheel.wheelCollider.motorTorque = moveInput * 1000f * maxAcceleration * speedFactor;// * Time.deltaTime; AI suggested to remove Time.deltaTime
+             
             }
 		}	
     }
 
-	void Steer()
+   
+
+    void Steer()
 	{
 		foreach(var wheel in wheels)
 		{
@@ -99,12 +111,15 @@ public class CarController : MonoBehaviour
 
     void Brake()
     {
+
         bool isTurning = Mathf.Abs(steerInput) > 0.1f;
         bool isMoving = Mathf.Abs(moveInput) > 0.1f;
         bool isBraking = Input.GetKey(KeyCode.Space);
 
         foreach (var wheel in wheels)
         {
+            Debug.Log("Brake Torque: " + wheel.wheelCollider.brakeTorque);
+
             //Car four status logic
             if (isBraking == true)
             {
@@ -179,13 +194,32 @@ public class CarController : MonoBehaviour
                 {
                     if (isMoving == true)
                     {
-                        // DRIVING: no braking, full grip
-                        wheel.wheelCollider.brakeTorque = 0f;
+                        // Opposite direction detected
+                        if ((moveInput > 0 && forwardVelocity < -0.5f) ||
+                            (moveInput < 0 && forwardVelocity > 0.5f))
+                        {
+                            // Apply strong brake instead of reverse torque
+                            wheel.wheelCollider.motorTorque = 0f;
+                            wheel.wheelCollider.brakeTorque = 1500000f; // tweak this
+                        }
+                        else
+                        {
+                            // DRIVING: no braking, full grip
+                            wheel.wheelCollider.brakeTorque = 0f;
 
-                        WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-                        friction.stiffness = 1.8f;
-                        wheel.wheelCollider.sidewaysFriction = friction;
-                        //Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                            WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
+                            friction.stiffness = 1.8f;
+                            wheel.wheelCollider.sidewaysFriction = friction;
+                            //Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        }
+
+                        //// DRIVING: no braking, full grip
+                        //wheel.wheelCollider.brakeTorque = 0f;
+
+                        //WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
+                        //friction.stiffness = 1.8f;
+                        //wheel.wheelCollider.sidewaysFriction = friction;
+                        ////Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                     else if (isMoving == false)
                     {
@@ -203,13 +237,32 @@ public class CarController : MonoBehaviour
                 {
                     if (isMoving == true)
                     {
-                        // DRIVING: no braking, full grip
-                        wheel.wheelCollider.brakeTorque = 0f;
+                        // Opposite direction detected
+                        if ((moveInput > 0 && forwardVelocity < -0.5f) ||
+                            (moveInput < 0 && forwardVelocity > 0.5f))
+                        {
+                            // Apply strong brake instead of reverse torque
+                            wheel.wheelCollider.motorTorque = 0f;
+                            wheel.wheelCollider.brakeTorque = 1500000f; // tweak this
+                        }
+                        else
+                        {
+                            // DRIVING: no braking, full grip
+                            wheel.wheelCollider.brakeTorque = 0f;
 
-                        WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
-                        friction.stiffness = 1.8f;
-                        wheel.wheelCollider.sidewaysFriction = friction;
-                        //Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                            WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
+                            friction.stiffness = 1.8f;
+                            wheel.wheelCollider.sidewaysFriction = friction;
+                            //Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
+                        }
+
+                        //// DRIVING: no braking, full grip
+                        //wheel.wheelCollider.brakeTorque = 0f;
+
+                        //WheelFrictionCurve friction = wheel.wheelCollider.sidewaysFriction;
+                        //friction.stiffness = 1.8f;
+                        //wheel.wheelCollider.sidewaysFriction = friction;
+                        ////Debug.Log("Drive mode. Wheel stiffness: " + friction.stiffness + ". Brake Torque: " + wheel.wheelCollider.brakeTorque);
                     }
                     else if (isMoving == false)
                     {
