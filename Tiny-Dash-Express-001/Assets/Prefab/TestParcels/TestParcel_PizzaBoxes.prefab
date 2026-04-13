@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6397440847058922081}
   - component: {fileID: 3101306805601174012}
   - component: {fileID: 3295189823990496283}
-  - component: {fileID: 6156074462604848555}
   - component: {fileID: 8738830371474160507}
   - component: {fileID: 1151204060434515615}
+  - component: {fileID: 8972095762455563944}
   m_Layer: 7
   m_Name: TestParcel_PizzaBox_04 (1)
   m_TagString: Pizza
@@ -93,27 +93,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6156074462604848555
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369529948920672326}
-  m_Material: {fileID: 13400000, guid: 36a9af0d85dfc534d9bd2b53c895c387, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8738830371474160507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,6 +133,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
+--- !u!65 &8972095762455563944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369529948920672326}
+  m_Material: {fileID: 13400000, guid: 36a9af0d85dfc534d9bd2b53c895c387, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 0.68525213, z: 2.0000048}
+  m_Center: {x: 0.000000086251646, y: 0.39251706, z: -0.00000018192769}
 --- !u!1 &1141766795848002286
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,9 +165,9 @@ GameObject:
   - component: {fileID: 4433306900169853514}
   - component: {fileID: 6452022847604124957}
   - component: {fileID: 8468192434791546631}
-  - component: {fileID: 2693298552108009591}
   - component: {fileID: 3252138203626419859}
   - component: {fileID: 3970020522392550821}
+  - component: {fileID: 2510605491803190508}
   m_Layer: 7
   m_Name: TestParcel_PizzaBox_04
   m_TagString: Pizza
@@ -247,27 +247,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2693298552108009591
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1141766795848002286}
-  m_Material: {fileID: 13400000, guid: 36a9af0d85dfc534d9bd2b53c895c387, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3252138203626419859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -308,6 +287,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
+--- !u!65 &2510605491803190508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141766795848002286}
+  m_Material: {fileID: 13400000, guid: 36a9af0d85dfc534d9bd2b53c895c387, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 0.6901537, z: 2.0000048}
+  m_Center: {x: 0.000000086251646, y: 0.4115776, z: -0.00000018192769}
 --- !u!1 &1455606301667934576
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,9 +319,9 @@ GameObject:
   - component: {fileID: 921718163633791227}
   - component: {fileID: 4649563733264723893}
   - component: {fileID: 7031435773574440037}
-  - component: {fileID: 909376227894207293}
   - component: {fileID: 3633657775991640474}
   - component: {fileID: 4013816453164721484}
+  - component: {fileID: 6479792972917728360}
   m_Layer: 7
   m_Name: TestParcel_PizzaBox_04 (2)
   m_TagString: Pizza
@@ -401,27 +401,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &909376227894207293
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455606301667934576}
-  m_Material: {fileID: 13400000, guid: 36a9af0d85dfc534d9bd2b53c895c387, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3633657775991640474
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -462,6 +441,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 10
+--- !u!65 &6479792972917728360
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455606301667934576}
+  m_Material: {fileID: 13400000, guid: 36a9af0d85dfc534d9bd2b53c895c387, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0000002, y: 0.6476762, z: 2.0000048}
+  m_Center: {x: 0.000000086251646, y: 0.40482864, z: -0.00000018192769}
 --- !u!1 &2894367716809146255
 GameObject:
   m_ObjectHideFlags: 0
