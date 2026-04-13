@@ -194,7 +194,7 @@ public class CarController : MonoBehaviour
                 {
                     if (isMoving == true)
                     {
-                        // Opposite direction detected
+                        // // Vehicle moving front/back, but player press S/W
                         if ((moveInput > 0 && forwardVelocity < -0.5f) ||
                             (moveInput < 0 && forwardVelocity > 0.5f))
                         {
@@ -237,7 +237,7 @@ public class CarController : MonoBehaviour
                 {
                     if (isMoving == true)
                     {
-                        // Opposite direction detected
+                        // Vehicle moving front/back, but player press S/W
                         if ((moveInput > 0 && forwardVelocity < -0.5f) ||
                             (moveInput < 0 && forwardVelocity > 0.5f))
                         {

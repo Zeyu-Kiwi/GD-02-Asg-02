@@ -28,9 +28,7 @@ public class SimpleWalker : MonoBehaviour
         rb.linearDamping = 2f;
         rb.angularDamping = 3f;
         rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.FreezeRotationX |
-                        RigidbodyConstraints.FreezeRotationZ |
-                        RigidbodyConstraints.FreezePositionY;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;// | RigidbodyConstraints.FreezePositionY;
 
         PickNewDirection();
         lastPosition = transform.position;

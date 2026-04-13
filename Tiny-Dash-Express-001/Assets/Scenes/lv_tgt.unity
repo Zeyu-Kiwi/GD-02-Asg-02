@@ -126615,7 +126615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimpleWalker
   walkSpeed: 2
   changeDirectionTime: 8
-  boundarySize: 20
+  boundarySize: 50
   pushForce: 5
 --- !u!95 &1704144572
 Animator:
