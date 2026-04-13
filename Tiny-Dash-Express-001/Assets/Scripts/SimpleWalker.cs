@@ -4,7 +4,7 @@ public class SimpleWalker : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float walkSpeed = 2f;
-    public float changeDirectionTime = 8f;
+    public float changeDirectionTime = 10f;
     public float boundarySize = 30f;
 
     [Header("Physics Settings")]
@@ -17,6 +17,9 @@ public class SimpleWalker : MonoBehaviour
     private float knockTimer = 0f;
     private float stuckTimer = 0f;
     private Vector3 lastPosition;
+
+    private float boundaryCooldown = 0f;
+    private bool isTurning = false;
 
     void Start()
     {
@@ -36,6 +39,19 @@ public class SimpleWalker : MonoBehaviour
 
     void Update()
     {
+        if (isTurning) return;
+
+        float distanceFromStart = Vector3.Distance(transform.position, startPosition);
+
+
+        boundaryCooldown -= Time.deltaTime;
+
+        if (distanceFromStart > boundarySize && boundaryCooldown <= 0f)
+        {
+            TurnAround();
+            boundaryCooldown = 1.5f; // prevent spam
+        }
+
         // If knocked, wait before moving again
         if (isKnocked)
         {
@@ -72,7 +88,7 @@ public class SimpleWalker : MonoBehaviour
         rb.linearVelocity = transform.forward * walkSpeed;
 
         // Check boundary
-        float distanceFromStart = Vector3.Distance(transform.position, startPosition);
+        
         if (distanceFromStart > boundarySize)
         {
             TurnAround();
@@ -84,6 +100,8 @@ public class SimpleWalker : MonoBehaviour
         {
             PickNewDirection();
         }
+
+        
     }
 
     void PickNewDirection()
@@ -111,14 +129,25 @@ public class SimpleWalker : MonoBehaviour
 
     void TurnAround()
     {
-        // Simple 180 degree turn
+        isTurning = true;
+
         float currentY = transform.eulerAngles.y;
         float newY = currentY + 180f;
 
         transform.rotation = Quaternion.Euler(0, newY, 0);
+
+        // Push slightly back inside boundary to prevent retrigger
+        Vector3 dirFromCenter = (transform.position - startPosition).normalized;
+        transform.position = startPosition + dirFromCenter * (boundarySize - 1f);
+
         timer = changeDirectionTime;
 
-        //Debug.Log("Cow hit boundary - turned around");
+        Invoke(nameof(EndTurn), 0.5f);
+    }
+
+    void EndTurn()
+    {
+        isTurning = false;
     }
 
     void OnCollisionEnter(Collision collision)
