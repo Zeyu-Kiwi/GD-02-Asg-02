@@ -13,23 +13,6 @@ public class TutorialManager : MonoBehaviour
     private void Update()
     {
         CheckInput();
-        
-
-        //for (int i = 0; i < popUps.Length; i++)
-        //{
-        //    if (i == popUpIndex)
-        //    {
-        //        //Debug.Log("current index: " + i + ", active tutorial");
-        //        popUps[i].SetActive(true);
-        //    }
-        //    else
-        //    {
-        //        //Debug.Log("current index: " + i + ", deactive tutorial");
-        //        popUps[i].SetActive(false);
-        //    }
-        //}
-
-        
     }
 
     void ShowPopup(int index)
@@ -55,25 +38,28 @@ public class TutorialManager : MonoBehaviour
                 ShowPopup(popUpIndex);
             }
         }
-        else if (popUpIndex == 1) // tutorial: learn to brake
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //Debug.Log("learnt to brake");
-                popUpIndex++;
-                ShowPopup(popUpIndex);
-            }
-        }
-        else if (popUpIndex == 2) // tutorial: learn to drift
+        else if (popUpIndex == 1) // tutorial: learn to drift
         {
             if (Mathf.Abs(steerInput) > 0.1f && Input.GetKeyDown(KeyCode.Space))
             {
                 //Debug.Log("learnt to drift");
                 popUpIndex++;
                 ShowPopup(popUpIndex);
+                waitTime = 10f;
+            }
+
+            if (waitTime <= 0)
+            {
+                popUpIndex++;
+                ShowPopup(popUpIndex);
+                waitTime = 10f;
+            }
+            else
+            {
+                waitTime -= Time.deltaTime;
             }
         }
-        else if (popUpIndex == 3) // tutorial learn to reload
+        else if (popUpIndex == 2) // tutorial learn to reload
         {
             if (SaveSystem.Instance.isLoaded && Input.GetKeyDown(KeyCode.R)) // move to next tutorial if player perform a reload
             {
@@ -96,15 +82,20 @@ public class TutorialManager : MonoBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
-        else if (popUpIndex == 4) // tutorial learn to open map
+        else if (popUpIndex == 3) // tutorial learn to open map
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (waitTime <= 0)
             {
                 popUpIndex++;
                 ShowPopup(popUpIndex);
+                waitTime = 5f;
+            }
+            else
+            {
+                waitTime -= Time.deltaTime;
             }
         }
-        else if (popUpIndex == 5) // tutorial end txt
+        else if (popUpIndex == 4) // tutorial end txt
         {
             if (waitTime <= 0)
             {

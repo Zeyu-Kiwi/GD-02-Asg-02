@@ -2912,11 +2912,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e385d0b05f8a2f94682f68a73c9b186e, type: 3}
   m_PrefabInstance: {fileID: 1711440549}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &57691770 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6587119826604190045, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
-  m_PrefabInstance: {fileID: 644373128889194348}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &58095305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37028,7 +37023,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 60, y: 50}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439622345
 MonoBehaviour:
@@ -37045,6 +37040,9 @@ MonoBehaviour:
   player: {fileID: 789609123}
   mark: {fileID: 0}
   zoneMark: {fileID: 439622344}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &439622346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37065,7 +37063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -53666,7 +53664,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 50, y: 40}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730633321
 MonoBehaviour:
@@ -53683,6 +53681,9 @@ MonoBehaviour:
   player: {fileID: 1835240965}
   mark: {fileID: 0}
   zoneMark: {fileID: 730633320}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &730633322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53703,7 +53704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -56544,7 +56545,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 60, y: 50}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793181153
 MonoBehaviour:
@@ -56561,6 +56562,9 @@ MonoBehaviour:
   player: {fileID: 111229724}
   mark: {fileID: 0}
   zoneMark: {fileID: 793181152}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &793181154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56581,7 +56585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -58357,7 +58361,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 50, y: 40}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &829428142
 MonoBehaviour:
@@ -58374,6 +58378,9 @@ MonoBehaviour:
   player: {fileID: 1891754445}
   mark: {fileID: 0}
   zoneMark: {fileID: 829428141}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &829428143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58394,7 +58401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68425,7 +68432,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 60, y: 50}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920134701
 MonoBehaviour:
@@ -68442,6 +68449,9 @@ MonoBehaviour:
   player: {fileID: 1145777811}
   mark: {fileID: 0}
   zoneMark: {fileID: 920134700}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &920134702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68462,7 +68472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -93088,7 +93098,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 50, y: 40}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240555134
 MonoBehaviour:
@@ -93105,6 +93115,9 @@ MonoBehaviour:
   player: {fileID: 1262341272}
   mark: {fileID: 0}
   zoneMark: {fileID: 1240555133}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &1240555135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93125,7 +93138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111346,7 +111359,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 60, y: 60}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500886341
 MonoBehaviour:
@@ -111363,6 +111376,9 @@ MonoBehaviour:
   player: {fileID: 1164598588}
   mark: {fileID: 0}
   zoneMark: {fileID: 1500886340}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &1500886342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111383,7 +111399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -161154,7 +161170,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 240}
-  m_SizeDelta: {x: 50, y: 40}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983905956
 MonoBehaviour:
@@ -161171,6 +161187,9 @@ MonoBehaviour:
   player: {fileID: 1742052325}
   mark: {fileID: 0}
   zoneMark: {fileID: 1983905955}
+  rotationSpeed: 100
+  scaleSpeed: 2
+  scaleAmount: 0.2
 --- !u!114 &1983905957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161191,7 +161210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a936bf20757db6488bd8d530a08df18, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -165007,12 +165026,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
+      propertyPath: waitTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: roadBlocks
       value: 
       objectReference: {fileID: 1917822146}
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: popUps.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: 'popUps.Array.data[0]'
@@ -165021,19 +165044,19 @@ PrefabInstance:
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: 'popUps.Array.data[1]'
       value: 
-      objectReference: {fileID: 57691770}
+      objectReference: {fileID: 1340036609}
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: 'popUps.Array.data[2]'
       value: 
-      objectReference: {fileID: 1340036609}
+      objectReference: {fileID: 1329596419}
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: 'popUps.Array.data[3]'
       value: 
-      objectReference: {fileID: 1329596419}
+      objectReference: {fileID: 1931016570}
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: 'popUps.Array.data[4]'
       value: 
-      objectReference: {fileID: 1931016570}
+      objectReference: {fileID: 300007945}
     - target: {fileID: 2519298471344130075, guid: b9b7f1ae989501f4a800a291d6bb3259, type: 3}
       propertyPath: 'popUps.Array.data[5]'
       value: 
@@ -169956,7 +169979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5337818064047398833, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5722566865359699677, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_CullTransparentMesh
@@ -169986,6 +170009,12 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.6745283
       objectReference: {fileID: 0}
+    - target: {fileID: 6304510175144042266, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
+      propertyPath: m_text
+      value: 'After gaining some speed
+
+        hold Space & A / D to drift'
+      objectReference: {fileID: 0}
     - target: {fileID: 6308697069488066081, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       propertyPath: m_text
       value: "Game auto saves after exiting \n/\nPress E to load last save"
@@ -170002,8 +170031,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7871398496654588974, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515521374776042817, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
+      propertyPath: m_text
+      value: 'WASD to control.
+
+        Space to break.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118113804273052842, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4015403136154322155, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
+    - {fileID: 6587119826604190045, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3242314241646915592, guid: 080e6eecfe712ac448366d07902f6bb3, type: 3}
       insertIndex: -1
